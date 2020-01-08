@@ -91,9 +91,9 @@ func processJSON(fileName string, mapHandler http.HandlerFunc) (http.HandlerFunc
 		return mapHandler, err
 	}
 
-	yamlHandler, err := urlshort.YAMLHandler([]byte(json), mapHandler)
+	jsonHandler, err := urlshort.JSONHandler([]byte(json), mapHandler)
 	if err != nil {
 		panic(err)
 	}
-	return yamlHandler, err
+	return jsonHandler, err
 }
